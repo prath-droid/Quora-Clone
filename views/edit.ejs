@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quora-Post Edit</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Isometra&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h2>Post</h2>
+    <p>POST ID:<%= post.id %></p>
+    <p>POST username:@<%= post.username %></p>
+    <form method="POST" action="/posts/<%= post.id %>?_method=PATCH">
+      <textarea name="content"><%= post.content %></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

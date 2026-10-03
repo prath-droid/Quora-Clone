@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(1) Quora</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Isometra&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="sidebar">
+        <a href="/posts/new" class="anchor">+ Create Space</a>
+        <div class="space-list">
+        <a class="anchor" href="#"> <i class="fa-solid fa-bars"></i>Movies</a>
+        <a class="anchor" href="#"> <i class="fa-solid fa-bars"></i> Health</a>
+        <a class="anchor" href="#"><i class="fa-solid fa-bars"></i>Technology</a>
+        <a class="anchor" href="#"><i class="fa-solid fa-bars"></i>Education</a>
+        <a class="anchor" href="#"><i class="fa-solid fa-bars"></i>Invasions</a>
+        <a class="anchor" href="#"><i class="fa-solid fa-bars"></i>History of Technology</a>
+        <a class="anchor" href="#"><i class="fa-solid fa-bars"></i>Experiences </a>
+        <a class="anchor" href="#"><i class="fa-solid fa-bars"></i> Interaction</a>
+        </div>
+    </div>
+    <h1 class="isometra-regular">Quora</h1>
+    <div class="posts-container">
+    <% for (let post of posts) { %>
+        <div class="username">
+            <h3>
+                @<%= post.username %>
+                <a href="#"><i class="fa-solid fa-circle"></i>Follow</a>
+            </h3>
+
+            <p><%= post.content %></p>
+            <div class="post-actions">
+    <div class="post-links">
+        <a class="wale" href="/posts/<%= post.id %>">(more)</a>
+        <a class="edit" href="/posts/<%= post.id %>/edit">Edit</a>
+    </div>
+
+    <form class="but" method="post"
+          action="/posts/<%= post.id %>?_method=DELETE">
+        <button type="submit">Delete</button>
+    </form>
+</div>
+        </div>
+    <% } %>
+</div>
+
+    
+
+    
+    
+
+</body>
+</html>
